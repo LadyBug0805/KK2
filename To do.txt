@@ -1,0 +1,10 @@
+This is my to do list for this project: 
+
+-Investigate and decide upon automation tool: Selenium, Python
+-Decide test object : 70k website? Tenatively. 
+-Create test analysis & mindmap 
+-Create at least five(5) automated tests to be demoed 
+-Document set-up of tests in Selenium
+-CI & Pipeline/Jenkins - document setup 
+
+-Other: ? 
