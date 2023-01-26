@@ -11,6 +11,8 @@ driver.maximize_window()
 print(driver.title)
 
 search = driver.find_element(By.CLASS_NAME, "form-control")
+search.clear()
 search.send_keys("Slayer")
 search.send_keys(Keys.RETURN)
 time.sleep(5)
+
