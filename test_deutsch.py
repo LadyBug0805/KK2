@@ -10,21 +10,23 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+
 class Test():
-  def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
-  
-  def teardown_method(self, method):
-    self.driver.quit()
-  
-  def test_deutsch(self):
-    self.driver.get("https://70000tons.com/")
-    self.driver.maximize_window()
-    self.driver.find_element(By.LINK_TEXT, "English").click()
-    self.driver.find_element(By.LINK_TEXT, "English").click()
-    self.driver.find_element(By.CSS_SELECTOR, "#mega-menu-item-wpml-ls-18-de .wpml-ls-native").click()
-    
-    self.driver.find_element(By.CSS_SELECTOR, "#intro-message > h1").click()
-    assert self.driver.find_element(By.XPATH, "//*[@id=\"intro-message\"]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
-  
+    def setup_method(self, method):
+        self.driver = webdriver.Chrome()
+        self.vars = {}
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_deutsch(self):
+        self.driver.get("https://70000tons.com/")
+        self.driver.maximize_window()
+        self.driver.find_element(By.LINK_TEXT, "English").click()
+        self.driver.find_element(By.LINK_TEXT, "English").click()
+
+        el = self.driver.find_element(By.ID, "mega-menu-item-wpml-ls-18-en")
+        ActionChains(self.driver).move_to_element(el).perform()
+        self.driver.find_element(By.LINK_TEXT, "Deutsch").click()
+        assert self.driver.find_element(
+            By.XPATH, "//*[@id=\"intro-message\"]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
