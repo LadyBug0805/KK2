@@ -15,8 +15,8 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Echo chrome
-        run: google-chrome --version
+      - name: Echo chromedriver
+        run: chromedriver --version
       # - name: Installing package list
       #   run: apt list --installed
       # - name: Removing previous chrome instances on runner
