@@ -1,21 +1,24 @@
 name: test01
-on: push  
+on: push
 jobs:
   test01:
     runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
-     #Setup Python   
+      #Setup Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
-      - name: Installing package list
-        run: apt list --installed    
-      - name: Removing previous chrome instances on runner 
-        run: sudo apt purge google-chrome-stable 
+      # - name: Installing package list
+      #   run: apt list --installed
+      # - name: Removing previous chrome instances on runner
+      #   run: sudo apt purge google-chrome-stable
 
       - name: Install the necessary packages
         run: pip install chromedriver-autoinstaller requests webdriver-manager selenium pytest
