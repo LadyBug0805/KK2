@@ -27,6 +27,10 @@ class Test():
 
         el = self.driver.find_element(By.ID, "mega-menu-item-wpml-ls-18-en")
         ActionChains(self.driver).move_to_element(el).perform()
+        WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
+            By.LINK_TEXT, "Deutsch"))
         self.driver.find_element(By.LINK_TEXT, "Deutsch").click()
+        WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
+            By.XPATH, "//*[@id=\"intro-message\"]/h1"))
         assert self.driver.find_element(
             By.XPATH, "//*[@id=\"intro-message\"]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
