@@ -22,4 +22,4 @@ jobs:
         run: chromedriver --version
 
       - name: Run the PytTest script
-        run: pytest -rA
+        run: pytest ./test_deutsch.py
