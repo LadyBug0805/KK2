@@ -13,7 +13,13 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class Test():
     def setup_method(self, method):
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        options.add_argument('--disable-infobars')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--remote-debugging-port=9222')
+        self.driver = webdriver.Chrome(options=options)
         self.vars = {}
 
     def teardown_method(self, method):
