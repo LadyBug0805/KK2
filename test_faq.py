@@ -1,13 +1,11 @@
-from selenium import webdriver
-#from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
+from webdriver import get_webdriver
 
 
 class Testfaq():
     def setup_method(self, method):
-        self.driver = webdriver.Chrome()
+        self.driver = get_webdriver()
         self.vars = {}
 
     def teardown_method(self, method):
@@ -15,7 +13,6 @@ class Testfaq():
 
     def test_faq(self):
 
-        self.driver = webdriver.Chrome()
         self.driver.get("https://70000tons.com")
         self.driver.maximize_window()
 
