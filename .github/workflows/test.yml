@@ -15,12 +15,14 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Echo chrome
+        run: google-chrome --version
       # - name: Installing package list
       #   run: apt list --installed
       # - name: Removing previous chrome instances on runner
       #   run: sudo apt purge google-chrome-stable
 
-      - name: Install the necessary packages
-        run: pip install chromedriver-autoinstaller requests webdriver-manager selenium pytest
-      - name: Run the PytTest script
-        run: pytest -rA
+      # - name: Install the necessary packages
+      #   run: pip install chromedriver-autoinstaller requests webdriver-manager selenium pytest
+      # - name: Run the PytTest script
+      #   run: pytest -rA
