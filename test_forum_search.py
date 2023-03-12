@@ -19,9 +19,11 @@ class TestForumSearch():
 
         search = driver.find_element(By.CLASS_NAME, "form-control")
         search.click()
+        #clear any previously entered input
         search.clear()
         search.send_keys("slayer")
         search.send_keys(Keys.RETURN)
+        #Waiting for page to load search results
         WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
             By.XPATH, "/html/body/div[2]/div[2]/div/div/div/div[3]/div/span[1]"))
         assert self.driver.find_element(

@@ -25,11 +25,13 @@ class TestFaqtravel():
         self.driver.set_window_size(1722, 1034)
         self.driver.find_element(By.LINK_TEXT, "English").click()
 
+        #wait for page to load and click on FAQ
         WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
             By.XPATH, "/html/body/div[1]/header/nav/div/ul/li[6]"))
         self.driver.find_element(
             By.XPATH, "/html/body/div[1]/header/nav/div/ul/li[6]").click()
 
+        #Wait for Travel Questions to load
         WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
             By.XPATH, "/html/body/div[1]/div/section/article/section/div[1]/div[2]/div/div[1]/a"))
         self.driver.find_element(

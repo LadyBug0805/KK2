@@ -21,6 +21,7 @@ class Testfaq():
 
         faq = self.driver.find_element(By.ID, "umc-div-menu-faq")
         faq.click()
+        #Waiting for FAQ to load
         WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
             By.XPATH, "//*[@id=\"main\"]/article/section/h2[1]"))
         assert self.driver.find_element(

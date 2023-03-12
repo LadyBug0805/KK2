@@ -18,6 +18,5 @@ jobs:
       - name: Install the necessary packages
         run: pip install chromedriver requests webdriver-manager selenium pytest
 
-
       - name: Run the PytTest script
-        run: pytest ./test_deutsch.py
+        run: pytest -rA
