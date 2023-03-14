@@ -26,7 +26,7 @@ class Test():
             By.LINK_TEXT, "Deutsch"))
         self.driver.find_element(By.LINK_TEXT, "Deutsch").click()
         #Waiting for German page to load
-        WebDriverWait(self.driver, timeout=10).until(lambda d: d.find_element(
-            By.XPATH, "//*[@id=\"intro-message\"]/h1"))
+        WebDriverWait(self.driver, timeout=20).until(lambda d: d.find_element(
+            By.XPATH, "/html/body/div[1]/div/section/section[1]/h1"))
         assert self.driver.find_element(
-            By.XPATH, "//*[@id=\"intro-message\"]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
+            By.XPATH, "/html/body/div[1]/div/section/section[1]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
