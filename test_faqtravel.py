@@ -22,7 +22,7 @@ class TestFaqtravel():
 
     def test_faqtravel(self):
         self.driver.get("https://70000tons.com/")
-        self.driver.set_window_size(1722, 1034)
+        self.driver.maximize_window()
         self.driver.find_element(By.LINK_TEXT, "English").click()
 
         #wait for page to load and click on FAQ

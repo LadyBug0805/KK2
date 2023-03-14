@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver import get_webdriver
 
 
-class Testfaq():
+class TestFaq():
     def setup_method(self, method):
         self.driver = get_webdriver()
         self.vars = {}
