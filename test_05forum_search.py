@@ -15,6 +15,7 @@ class TestForumSearch():
     def test_forum_search(self):
         driver = self.driver
         driver.get("https://70000tons.com/forum/")
+        assert self.driver.current_url == "https://70000tons.com/forum/"
         driver.maximize_window()
 
         search = driver.find_element(By.CLASS_NAME, "form-control")
