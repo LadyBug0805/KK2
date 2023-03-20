@@ -30,3 +30,4 @@ class Test():
             By.XPATH, "/html/body/div[1]/div/section/section[1]/h1"))
         assert self.driver.find_element(
             By.XPATH, "/html/body/div[1]/div/section/section[1]/h1").text == "DAS ORIGINAL, DIE WELTGRÖSSTE HEAVY-METAL-KREUZFAHRT"
+        assert self.driver.current_url == "https://70000tons.com/home/?lang=de"
