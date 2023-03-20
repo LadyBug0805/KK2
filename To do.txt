@@ -3,8 +3,8 @@ This is my to do list for this project:
 COMPLETE -Investigate and decide upon automation tool: Selenium, Python
 COMPLETE -Decide test object : 70k website? Tenatively. 
 COMPLETE -Create test analysis & mindmap 
-IN PROGRESS -Create at least five(5) automated tests to be demoed 
-IN PROGRESS -Document set-up of tests in Selenium
-IN PROGRESS -CI & Pipeline/Jenkins - document setup 
+COMPLETE -Create at least five(5) automated tests to be demoed 
+COMPLETE -Document set-up of tests in Selenium
+COMPLETE -CI & Pipeline/Jenkins - document setup 
 
 N/A -Other: ? 
